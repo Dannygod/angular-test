@@ -10,7 +10,7 @@ To start a local development server, run:
 ```bash
 ng v
 ```
-![image](https://github.com/user-attachments/assets/668a0cc3-152d-4f4b-bdb9-1190c3acedd1)
+
 
 ## Add ng-zorro-antd
 
