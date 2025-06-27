@@ -1,37 +1,20 @@
 <nz-layout>
-  <nz-sider nzCollapsible [nzWidth]="200" [nzCollapsedWidth]="80" [(nzCollapsed)]="isCollapsed" style="min-height: 100vh;">
-    <div class="logo" [class.collapsed]="isCollapsed">
-      <img src="assets/width_800.jpg" />
-      <span *ngIf="!isCollapsed">LOGO</span>
-    </div>
-    <ul nz-menu nzTheme="dark" nzMode="inline">
-      <li nz-menu-item>
-        <nz-icon nzType="home"></nz-icon>
-        <span *ngIf="!isCollapsed">首頁</span>
-      </li>
-      <li nz-menu-item>
-        <nz-icon nzType="user"></nz-icon>
-        <span *ngIf="!isCollapsed">會員中心</span>
-      </li>
-      <li nz-menu-item>
-        <nz-icon nzType="setting"></nz-icon>
-        <span *ngIf="!isCollapsed">設定</span>
-      </li>
-      <li nz-menu-item>
-        <nz-icon nzType="unlock"></nz-icon>
-        <span *ngIf="!isCollapsed">登出</span>
-      </li>
-    </ul>
+  <nz-sider nzCollapsible [nzWidth]="200" [nzCollapsedWidth]="80" [nzCollapsed]="isCollapsed" (nzCollapsedChange)="isCollapsedChange.emit($event)" style="min-height: 100vh;">
+    <app-sider [(isCollapsed)]="isCollapsed"></app-sider>
   </nz-sider>
   <nz-layout>
     <nz-header>
-      <h1>歡迎回來!</h1>
+      <app-header></app-header>
     </nz-header>
     <nz-content>
-      <div class="content-area">
-        <h2>這裡是內容區</h2>
-        <p>歡迎使用 ng-zorro-antd 打造現代化介面！</p>
-      </div>
+      <router-outlet></router-outlet>
     </nz-content>
+    <nz-footer style="text-align: center;">
+      <span>聯絡方式：</span>
+      <a href="mailto:dannyhsu@via.com.tw" target="_blank" style="margin:0 8px;"><i class="fa-solid fa-envelope"></i></a>
+      <a href="https://github.com/dannygod" target="_blank" style="margin:0 8px;"><i class="fa-brands fa-github"></i></a>
+      <a href="www.linkedin.com/in/沙-金-398170353" target="_blank" style="margin:0 8px;"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://twitter.com/dannygod" target="_blank" style="margin:0 8px;"><i class="fa-brands fa-twitter"></i></a>
+    </nz-footer>
   </nz-layout>
 </nz-layout>

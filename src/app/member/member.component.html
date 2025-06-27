@@ -1,0 +1,49 @@
+<h2>個人資料</h2>
+
+<!-- 大頭照、暱稱、簡介 -->
+<div class="profile-box">
+  <img [src]="profile.avatar" alt="avatar" class="avatar">
+  <div class="profile-info">
+    <div class="profile-name">{{ profile.name }}</div>
+    <div class="profile-intro">{{ profile.intro }}</div>
+  </div>
+</div>
+
+<!-- 技術棧展示 -->
+<section class="profile-section">
+  <h3>技術棧</h3>
+  <div class="tech-stack">
+    <div class="tech-item" *ngFor="let tech of techStack">
+      <i [ngClass]="tech.icon"></i>
+      <span>{{ tech.name }}</span>
+    </div>
+  </div>
+</section>
+
+<!-- 聯絡方式 -->
+<section class="profile-section">
+  <h3>聯絡方式</h3>
+  <div class="contacts">
+    <a *ngFor="let c of contacts" [href]="c.link" target="_blank" class="contact-item">
+      <i [ngClass]="c.icon"></i>
+      <span>{{ c.value }}</span>
+    </a>
+  </div>
+</section>
+
+<!-- Timeline -->
+<section class="profile-section">
+  <h3>學習/開發歷程</h3>
+  <ul class="timeline">
+    <li *ngFor="let t of timeline">
+      <span class="timeline-year">{{ t.year }}</span>
+      <span class="timeline-event">{{ t.event }}</span>
+    </li>
+  </ul>
+</section>
+
+<!-- 開源貢獻連結 -->
+<section class="profile-section">
+  <h3>開源貢獻</h3>
+  <a [href]="githubRepo" target="_blank">前往我的 GitHub Repo</a>
+</section>

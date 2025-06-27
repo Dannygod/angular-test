@@ -1,0 +1,52 @@
+<h2>設定</h2>
+
+<!-- 語言切換 -->
+<section class="setting-section">
+  <h3>語言切換</h3>
+  <button [class.active]="language==='zh-TW'" (click)="setLanguage('zh-TW')">繁體中文</button>
+  <button [class.active]="language==='en'" (click)="setLanguage('en')">English</button>
+</section>
+
+<!-- 主題切換 -->
+<section class="setting-section">
+  <h3>主題切換</h3>
+  <button (click)="toggleTheme()">{{ theme === 'light' ? '切換為暗色' : '切換為亮色' }}</button>
+  <span>目前主題：{{ theme === 'light' ? '亮色' : '暗色' }}</span>
+</section>
+
+<!-- 個人資料編輯 -->
+<section class="setting-section">
+  <h3>個人資料</h3>
+  <div *ngIf="!isEditingProfile">
+    <img [src]="profile.avatar" alt="avatar" class="avatar">
+    <div>暱稱：{{ profile.name }}</div>
+    <div>Email：{{ profile.email }}</div>
+    <div>簡介：{{ profile.intro }}</div>
+    <button (click)="startEditProfile()">編輯</button>
+  </div>
+  <form *ngIf="isEditingProfile" (ngSubmit)="saveProfile()">
+    <label>暱稱：<input [(ngModel)]="editProfile.name" name="name"></label><br>
+    <label>Email：<input [(ngModel)]="editProfile.email" name="email"></label><br>
+    <label>簡介：<input [(ngModel)]="editProfile.intro" name="intro"></label><br>
+    <label>大頭照網址：<input [(ngModel)]="editProfile.avatar" name="avatar"></label><br>
+    <button type="submit">儲存</button>
+    <button type="button" (click)="cancelEditProfile()">取消</button>
+  </form>
+</section>
+
+<!-- 訂閱通知設定 -->
+<section class="setting-section">
+  <h3>訂閱通知</h3>
+  <label><input type="checkbox" [(ngModel)]="notifyNewPost" name="notifyNewPost"> 新文章通知</label>
+  <label><input type="checkbox" [(ngModel)]="notifyComment" name="notifyComment"> 留言通知</label>
+</section>
+
+<!-- 匯出文章 -->
+<section class="setting-section">
+  <h3>匯出文章</h3>
+  <select [(ngModel)]="exportType" name="exportType">
+    <option value="md">Markdown</option>
+    <option value="pdf">PDF</option>
+  </select>
+  <button (click)="exportArticle()">匯出</button>
+</section>

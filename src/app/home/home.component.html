@@ -1,0 +1,48 @@
+<!-- 作者簡介區塊 -->
+<div class="author-box">
+  <img [src]="author.avatar" alt="avatar" class="avatar">
+  <div class="author-info">
+    <div class="author-name">{{ author.name }}</div>
+    <div class="author-intro">{{ author.intro }}</div>
+  </div>
+</div>
+
+<!-- 搜尋與分類篩選 -->
+<div class="search-filter">
+  <input type="text" [(ngModel)]="searchText" placeholder="搜尋文章..." />
+  <select [(ngModel)]="selectedCategory">
+    <option *ngFor="let c of categories" [value]="c">{{ c }}</option>
+  </select>
+</div>
+
+<!-- Tags 快速導覽 -->
+<div class="tags-nav">
+  <span *ngFor="let tag of tags" (click)="selectTag(tag)" [class.selected]="selectedTag === tag">#{{ tag }}</span>
+  <button *ngIf="selectedTag" (click)="clearTag()">清除標籤</button>
+</div>
+
+<!-- 置頂文章 -->
+<div class="pinned-posts" *ngIf="pinnedPosts.length">
+  <h3>置頂文章</h3>
+  <div class="post-card pinned" *ngFor="let post of pinnedPosts">
+    <div class="post-title">{{ post.title }}</div>
+    <div class="post-summary">{{ post.summary }}</div>
+    <div class="post-meta">{{ post.date }} | {{ post.category }}</div>
+    <div class="post-tags">
+      <span *ngFor="let tag of post.tags">#{{ tag }}</span>
+    </div>
+  </div>
+</div>
+
+<!-- 文章列表 -->
+<div class="post-list">
+  <h3>最新文章</h3>
+  <div class="post-card" *ngFor="let post of normalPosts">
+    <div class="post-title">{{ post.title }}</div>
+    <div class="post-summary">{{ post.summary }}</div>
+    <div class="post-meta">{{ post.date }} | {{ post.category }}</div>
+    <div class="post-tags">
+      <span *ngFor="let tag of post.tags">#{{ tag }}</span>
+    </div>
+  </div>
+</div>

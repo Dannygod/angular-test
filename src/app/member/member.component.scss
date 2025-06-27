@@ -1,0 +1,105 @@
+.profile-box {
+  display: flex;
+  align-items: center;
+  background: #f5f5f5;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+.profile-box .avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1.2rem;
+  border: 2px solid #eee;
+}
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.profile-name {
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+.profile-intro {
+  color: #666;
+  font-size: 1rem;
+}
+
+.profile-section {
+  background: #fafbfc;
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+.profile-section h3 {
+  margin-top: 0;
+  margin-bottom: 0.7rem;
+}
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+}
+.tech-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #e0eaff;
+  border-radius: 4px;
+  padding: 0.3rem 0.8rem;
+}
+.tech-icon {
+  width: 24px;
+  height: 24px;
+}
+.contacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  color: #1976d2;
+  background: #f0f0f0;
+  border-radius: 4px;
+  padding: 0.2rem 0.8rem;
+  transition: background 0.2s;
+}
+.contact-item:hover {
+  background: #1976d2;
+  color: #fff;
+}
+.contact-icon {
+  width: 20px;
+  height: 20px;
+}
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.timeline li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.timeline-year {
+  font-weight: bold;
+  color: #1976d2;
+  margin-right: 1.2rem;
+  min-width: 48px;
+}
+.timeline-event {
+  color: #444;
+}
+.profile-section a {
+  color: #1976d2;
+  text-decoration: underline;
+}
