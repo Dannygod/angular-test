@@ -1,5 +1,5 @@
 <nz-layout>
-  <nz-sider nzCollapsible [nzWidth]="200" [nzCollapsedWidth]="80" [nzCollapsed]="isCollapsed" (nzCollapsedChange)="isCollapsedChange.emit($event)" style="min-height: 100vh;">
+  <nz-sider nzCollapsible [nzWidth]="200" [nzCollapsedWidth]="80" [nzCollapsed]="isCollapsed" (nzCollapsedChange)="onCollapsedChange($event)" style="min-height: 100vh;">
     <app-sider [(isCollapsed)]="isCollapsed"></app-sider>
   </nz-sider>
   <nz-layout>

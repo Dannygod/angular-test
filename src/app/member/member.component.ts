@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-member',
   templateUrl: './member.component.html',
-  styleUrls: ['./member.component.scss'],
-  standalone: true,
-  imports: [CommonModule]
+  standalone: false,
+  styleUrls: ['./member.component.scss']
 })
 export class MemberComponent {
   // 個人資料

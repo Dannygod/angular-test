@@ -1,13 +1,10 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-setting',
   templateUrl: './setting.component.html',
-  styleUrls: ['./setting.component.scss'],
-  standalone: true,
-  imports: [CommonModule, FormsModule]
+  standalone: false,
+  styleUrls: ['./setting.component.scss']
 })
 export class SettingComponent {
   // 語言切換

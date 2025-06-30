@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
 
 interface Post {
   id: number;
@@ -15,9 +13,8 @@ interface Post {
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
-  standalone: true,
-  imports: [CommonModule, FormsModule]
+  standalone: false,
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
   // Mock 文章資料

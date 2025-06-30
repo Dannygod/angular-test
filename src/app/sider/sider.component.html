@@ -3,20 +3,11 @@
   <span *ngIf="!isCollapsed">Danny Hsu</span>
 </div>
 <ul nz-menu nzTheme="dark" nzMode="inline">
-  <li nz-menu-item routerLink="/home" routerLinkActive="ant-menu-item-selected">
-    <nz-icon nzType="home"></nz-icon>
-    <span *ngIf="!isCollapsed">首頁</span>
-  </li>
-  <li nz-menu-item routerLink="/member" routerLinkActive="ant-menu-item-selected">
-    <nz-icon nzType="user"></nz-icon>
-    <span *ngIf="!isCollapsed">個人資料</span>
-  </li>
-  <li nz-menu-item routerLink="/setting" routerLinkActive="ant-menu-item-selected">
-    <nz-icon nzType="setting"></nz-icon>
-    <span *ngIf="!isCollapsed">設定</span>
-  </li>
-  <li nz-menu-item>
-    <nz-icon nzType="unlock"></nz-icon>
-    <span *ngIf="!isCollapsed">登出</span>
+  <li nz-menu-item 
+      *ngFor="let item of menuItems" 
+      [routerLink]="item.routerLink" 
+      routerLinkActive="ant-menu-item-selected">
+    <i [ngClass]="item.icon"></i>
+    <span *ngIf="!isCollapsed">{{ item.label }}</span>
   </li>
 </ul>
